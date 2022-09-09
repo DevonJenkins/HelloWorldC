@@ -1,36 +1,38 @@
 #include <cs50.h>
 #include <stdio.h>
-//1. prompt for input. use get_int to grab a num that is < 9
 int main()
 {
     int n;
     do
     {
-        n = get_int("height: " );
+			printf("height: ");
+			scanf("%d", &n);
     }
-    while (n > 8);
+    while ((n > 8) || (n < 1));
 
     //for each row
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-
-
-        //for each column
-        for(int j = 0; j < n; j++)
+        //print spaces
+        for (int j = n - 1; j > i; j--)
         {
-
-            if(j < n - j)
-            {
-                printf("0");
-            }
+            printf(" ");
         }
+
         //print left hashes
+        for (int k = 0; k < i + 1; k++)
+        {
+            printf("#");
+        }
 
+        //print gaps
+        printf("  ");
 
-        //print gap
         //print right hashes
+        for (int l = 0; l < i + 1; l++)
+        {
+            printf("#");
+        }
         printf("\n");
     }
-
-
 }
