@@ -7,4 +7,8 @@ int main(void)
 		scanf("%[^\n]s", str);
 		printf("Hello %s", str);
 		printf("\n I hope you are well %s", str);
+		//TODO: help meeee
+		//TODO(banana): kill me
+		//XXX: Error 
+		//NOTE: this is is also a thing
 }
