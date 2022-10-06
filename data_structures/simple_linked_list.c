@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 struct Node {
-	int data;
+	char* string;
 	struct Node* next;
 };
 
 void printList(struct Node* n)
 {
 	while (n != NULL){
-		printf(" %d", n->data);
+		printf(" %s", n->string);
 		n = n->next;
 	}
 }
@@ -19,19 +19,24 @@ int main()
 	struct Node* head = NULL;
 	struct Node* second = NULL;
 	struct Node* third = NULL;
+	struct Node* fourth = NULL;
 
 	head = (struct Node*)malloc(sizeof(struct Node));
 	second = (struct Node*)malloc(sizeof(struct Node));
 	third = (struct Node*)malloc(sizeof(struct Node));
+	fourth = (struct Node*)malloc(sizeof(struct Node));
 
-	head->data = 1;
+	head->string = "Hi";
 	head->next = second;
 	
-	second->data = 2;
+	second->string = "Hello!";
 	second->next = third;
 
-	third->data = 3;
-	third->next = NULL;
+	third->string = "howdy!!";
+	third->next = fourth;
+
+	fourth->string = "hoody doody!!";
+	fourth->next = NULL;
 
 	printList(head);
 	printf("\n");
